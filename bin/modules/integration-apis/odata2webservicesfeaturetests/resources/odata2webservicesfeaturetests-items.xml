@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ [y] hybris Platform
+  ~
+  ~ Copyright (c) 2018 SAP SE or an SAP affiliate company.
+  ~ All rights reserved.
+  ~
+  ~ This software is the confidential and proprietary information of SAP
+  ~ ("Confidential Information"). You shall not disclose such Confidential
+  ~ Information and shall use it only in accordance with the terms of the
+  ~ license agreement you entered into with SAP.
+  -->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="items.xsd">
+
+    <collectiontypes>
+        <collectiontype code="DateCollection" elementtype="java.util.Date"/>
+        <collectiontype code="EnumCollection" elementtype="HttpMethod" type="list"/>
+    </collectiontypes>
+
+    <enumtypes>
+        <enumtype dynamic="true" code="OData2webservicesFeatureTestPropertiesTypes"
+                  jaloclass="de.hybris.platform.jalo.enumeration.EnumerationValue">
+            <value code="string"/>
+            <value code="bool"/>
+        </enumtype>
+    </enumtypes>
+
+    <relations>
+        <relation code="TestIntItem2testIntItemDetail" localized="false">
+            <description>
+                Defines non-partOf one-to-many relationships for the test integration item.
+            </description>
+            <sourceElement type="TestIntegrationItem" qualifier="master" cardinality="one"/>
+            <targetElement type="TestIntegrationItemDetail" qualifier="details" cardinality="many"
+                           collectiontype="set"/>
+        </relation>
+
+        <relation code="TestIntegrationItemToTestIntegrationEnum" localized="false">
+            <sourceElement type="TestIntegrationItem" cardinality="one" qualifier="testIntegrationItemRef"/>
+            <targetElement type="OData2webservicesFeatureTestPropertiesTypes" cardinality="many" qualifier="testEnums"
+                           collectiontype="set"/>
+        </relation>
+    </relations>
+
+    <itemtypes>
+        <itemtype code="TestIntegrationItem" extends="TestItemType2">
+            <description>
+                An item type for testing different scenarios around integration objects. This type has attributes of
+                numerous types
+                available in the type system and enables conditions, which otherwise would be possible only by picking
+                hard-to-find
+                modeling scenarios available in multiple types across possibly multiple *-items.xml.
+            </description>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <description>
+                        Unique identifier of the item because TestItemType2 does not have a unique identifier.
+                    </description>
+                    <modifiers read="true" write="true" search="true" optional="false" unique="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="otherItem" type="TestIntegrationItem">
+                    <description>
+                        Reference to another TestIntegrationItem, which can be used for testing conditions when the
+                        integration
+                        object references itself (same instance) or another item (different instance).
+                    </description>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="detail" type="TestIntegrationItemDetail">
+                    <description>
+                        Defines optional one-to-one association between this item and a TestIntegrationItemDetail.
+                    </description>
+                    <modifiers optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="bigDecimal" type="java.math.BigDecimal">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="dateCollection" type="DateCollection">
+                    <description>
+                        Defines an optional date collection.
+                    </description>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="bigInteger" type="java.math.BigInteger">
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="enumList" type="EnumCollection">
+                    <modifiers optional="true" read="true" write="true"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+            <indexes>
+                <index name="TestIntegrationItem_code">
+                    <key attribute="code"/>
+                </index>
+            </indexes>
+        </itemtype>
+        <itemtype code="TestIntegrationItemDetail" extends="TestItemType2">
+            <description>
+                An item type to simulate various kinds of relationships, i.e. one-to-many (master/detail), one-to-one,
+                etc.,
+                between the TestIntegrationItem and TestIntegrationItemDetail.
+            </description>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <description>
+                        Unique identifier of this detail item.
+                    </description>
+                    <modifiers read="true" write="true" search="true" optional="false" unique="true" initial="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="item" type="TestIntegrationItem">
+                    <description>
+                        Defines optional one-to-one association between this detail and a TestIntegrationItem.
+                    </description>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+            <indexes>
+                <index name="TestIntegrationItemDetail_code">
+                    <key attribute="code"/>
+                </index>
+            </indexes>
+        </itemtype>
+    </itemtypes>
+</items>
