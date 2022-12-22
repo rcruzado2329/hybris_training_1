@@ -1,0 +1,34 @@
+***************
+*** 14,20 ****
+  	<bean id="abstractAsGenericDao" abstract="true">
+  		<property name="flexibleSearchService" ref="flexibleSearchService" />
+  	</bean>
+- 	
+  	<alias name="defaultDefaultAsCategoryDao" alias="asCategoryDao" />
+  	<bean id="defaultDefaultAsCategoryDao" class="de.hybris.platform.adaptivesearch.daos.impl.DefaultAsCategoryDao" />
+  
+--- 14,20 ----
+  	<bean id="abstractAsGenericDao" abstract="true">
+  		<property name="flexibleSearchService" ref="flexibleSearchService" />
+  	</bean>
++ 
+  	<alias name="defaultDefaultAsCategoryDao" alias="asCategoryDao" />
+  	<bean id="defaultDefaultAsCategoryDao" class="de.hybris.platform.adaptivesearch.daos.impl.DefaultAsCategoryDao" />
+  
+***************
+*** 233,239 ****
+  	<bean id="defaultAsSearchProfileContextFactory" class="de.hybris.platform.adaptivesearch.context.impl.DefaultAsSearchProfileContextFactory" />
+  
+  	<!-- Services -->
+- 	
+  	<alias name="defaultAsCategoryService" alias="asCategoryService" />
+  	<bean id="defaultAsCategoryService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsCategoryService">
+  		<property name="asCategoryDao" ref="asCategoryDao" />
+--- 258,264 ----
+  	<bean id="defaultAsSearchProfileContextFactory" class="de.hybris.platform.adaptivesearch.context.impl.DefaultAsSearchProfileContextFactory" />
+  
+  	<!-- Services -->
++ 
+  	<alias name="defaultAsCategoryService" alias="asCategoryService" />
+  	<bean id="defaultAsCategoryService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsCategoryService">
+  		<property name="asCategoryDao" ref="asCategoryDao" />

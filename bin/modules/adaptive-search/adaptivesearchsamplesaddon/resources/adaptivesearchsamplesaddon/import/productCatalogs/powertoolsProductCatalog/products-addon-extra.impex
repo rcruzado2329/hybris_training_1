@@ -1,0 +1,10 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+
+
+INSERT_UPDATE AsSearchProfileActivationSet ; indexType[unique=true] ; catalogVersion(catalog(id),version)[unique=true]
+                                           ; powertoolsProductType  ; powertoolsProductCatalog:Staged                 
+
+INSERT_UPDATE AsCategoryAwareSearchProfile ; code[unique=true] ; name[lang=en]                         ; indexType[unique=true] ; catalogVersion(catalog(id),version)[unique=true] ; activationSet(catalogVersion(catalog(id),version),indexType) ; activationSetPOS
+                                           ; defaultPowertools ; Default Search Profile for powertools ; powertoolsProductType  ; powertoolsProductCatalog:Staged                  ; powertoolsProductCatalog:Staged:powertoolsProductType        ; 0               
