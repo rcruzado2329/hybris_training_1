@@ -1,0 +1,86 @@
+.status-active {
+  color: @fd-color--status-1;
+}
+.status-ignore,
+.status-inactive {
+  color: @fd-color--neutral-4;
+}
+.perso-list__status--value,
+.perso-cc-modal__title-status {
+  font-size: 12px;
+  font-weight: 700;
+}
+.personalization-modal__label {
+  font-size: 13px;
+  font-weight: 700;
+}
+/* * 
+/* Imports of the rest of personalizationpromotions styling
+*/
+/* *
+/* This file includes the styles used in Commerce Customization modal
+*/
+
+.perso-cc-modal .select2-choices {
+  margin-top: 15px;
+}
+
+.perso-cc-modal .ui-select-match-item.select2-search-choice {
+  padding: 4px 8px;
+  display: inline-block !important;
+  border: 1px solid @fd-color--neutral-3;
+  border-radius: 4px;
+  background: @fd-color--neutral-1;
+  line-height: 22px;
+  margin: 5px 10px 5px 0;
+  min-height: auto;
+}
+.perso-cc-modal .select2-disabled {
+  opacity: 0.4;
+  background: none;
+  cursor: none;
+}
+.perso-cc-modal .select2-input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.perso-cc-modal .ui-select-match-close {
+  position: inherit;
+  vertical-align: middle;
+  padding-left: 10px;
+  color: @fd-color--action-1
+}
+
+.perso-cc-modal .form-control{
+  border: none;
+  padding: 0;
+}
+.perso-cc-modal__title-layout {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 16px;
+  padding: 10px 0 20px 0;
+}
+.perso-cc-modal__title-cname {
+  font-weight: 700;
+  max-width: 35%;
+}
+.perso-cc-modal__title-vname {
+  padding-left: 5px;
+  max-width: 60%;
+}
+.perso-cc-modal__title-status {
+  padding: 0 5px;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .perso-cc-modal__ui-select--small {
+    width: 250px;
+  }
+}
+.perso-cc-modal .select2-container .select2-choice .select2-chosen,
+.perso-cc-modal .select2-container .select2-choices .select2-chosen {
+  display: inline-block;
+}
