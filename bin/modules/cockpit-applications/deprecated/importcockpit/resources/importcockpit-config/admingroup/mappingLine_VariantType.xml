@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<mapping-line>
+
+  <import-properties>
+  	<property qualifier="ComposedType.singleton"/>
+	<property qualifier="ComposedType.catalogItemType"/>
+  	<property qualifier="TypeManagerManaged.generate"/>
+  </import-properties>
+
+</mapping-line>

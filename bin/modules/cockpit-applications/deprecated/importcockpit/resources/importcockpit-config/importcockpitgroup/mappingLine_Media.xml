@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<mapping-line>
+
+  <special-translators>
+  	<special-translator qualifier="@media" translator="de.hybris.platform.impex.jalo.media.MediaDataTranslator" />
+  </special-translators>
+
+</mapping-line>

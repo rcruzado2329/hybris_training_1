@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<wizard-config showPrefilledValues="false" selectMode="false" createMode="true" createWithinPopup="false">
+	<displayed-properties>
+		<property qualifier="CronJob.code"/>
+		<property qualifier="CronJob.job">
+			<parameter name="restrictToCreateTypes" value="ImportCockpitJob"/>
+			<parameter name="allowSelect" value="true"/>
+			<parameter name="allowCreate" value="true"/>
+			<parameter name="allowAutocompletion" value="true" />
+			<parameter name="autocompletionSearchType" value="ImportCockpitJob" />
+		</property>
+	</displayed-properties>
+</wizard-config>
