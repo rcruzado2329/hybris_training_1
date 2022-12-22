@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.zkoss.org/2005/zul"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd">
+
+    <style src="${wr}/CloneIntegrationObjectModal.css"/>
+
+    <vlayout spacing="15px" sclass="yw-integrationbackoffice-clone-modal-body">
+        <span sclass="z-label">${labels.integrationbackoffice.cloneModal.newName}</span>
+        <textbox id="integrationObjectName"/>
+
+        <span sclass="z-label">${labels.integrationbackoffice.cloneModal.newType}</span>
+        <combobox id="integrationTypeComboBox"/>
+    </vlayout>
+
+    <button id="confirmButton" label="${labels.integrationbackoffice.cloneModal.confirmButton}" sclass="yw-integrationbackoffice-clone-modal-button"/>
+
+</widget>

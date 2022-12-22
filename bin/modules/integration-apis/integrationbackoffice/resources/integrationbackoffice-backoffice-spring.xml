@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<alias name="defaultReadService" alias="readService"/>
+	<bean id="defaultReadService" class="de.hybris.platform.integrationbackoffice.services.ReadService">
+		<property name="flexibleSearchService" ref="flexibleSearchService" />
+		<property name="typeService" ref="typeService" />
+		<property name="ODataDefaultSchemaGenerator" ref="oDataSchemaGenerator" />
+	</bean>
+
+	<bean id="writeService" class="de.hybris.platform.integrationbackoffice.services.WriteService">
+		<property name="readService" ref="readService" />
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+    <util:list id="adminRolesList" value-type="java.lang.String">
+        <value>backofficeadministratorrole</value>
+        <value>backofficeintegrationadministratorrole</value>
+    </util:list>
+
+	<bean id="editorAccessRights" class="de.hybris.platform.integrationbackoffice.widgets.editor.utility.EditorAccessRights">
+		<property name="userService" ref="userService" />
+        <property name="adminRoles" ref="adminRolesList" />
+	</bean>
+
+
+	<bean id="integrationbackofficeLabelLocator" class="com.hybris.cockpitng.util.labels.ResourcesLabelLocator" scope="singleton" init-method="init" lazy-init="false">
+  		<property name="location" value="/integrationbackoffice-backoffice-labels/"/>
+  		<property name="name" value="labels"/>
+  	</bean>
+
+</beans>

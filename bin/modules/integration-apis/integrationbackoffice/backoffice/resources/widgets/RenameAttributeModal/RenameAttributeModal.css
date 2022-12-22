@@ -1,0 +1,39 @@
+.yw-integrationbackoffice-rename-attribute-modal-body {
+    border-top: 1px solid #d5d8dc;
+    padding: 10px 20px 35px 20px;
+}
+
+.yw-integrationbackoffice-rename-attribute-modal-body .yw-integrationbackoffice-rename-attribute-field-name{
+    color: #787878;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.yw-integrationbackoffice-rename-attribute-modal-body .z-label {
+    color: #7d899c;
+    font-size: 12px;
+}
+
+.yw-modal-integrationObjectItemRenameAttributeModal {
+    max-width: 400px;
+    min-height: 415px;
+}
+
+.yw-integrationbackoffice-rename-attribute-modal-button {
+    float: right;
+    background-color: #fcdf2b;
+    color: black;
+    margin: 10px;
+}
+
+.yw-integrationbackoffice-rename-attribute-modal-button:hover {
+    background-color: #ffeb08;
+    color: black;
+}
+
+.yw-integration-rename-tooltip{
+    padding: 7px;
+    max-width: 300px;
+    max-height: 125px;
+}
